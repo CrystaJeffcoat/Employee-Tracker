@@ -1,15 +1,16 @@
 # Employee-Tracker
-View and manage the departments, roles, and employees of a business 
+> View and manage the departments, roles, and employees of a business 
+
+## Table of Contents
+* [Description](#Description)
+* [General Info](#General-Info)
+* [Setup](#Setup)
+* [Features](#Features)
+* [Demo Gif](#Demo-Gif)
+* [Developer Notes](#Developer-Notes)
 
 ## Description 
 Using node, inquirer, and MySQL, this application takes user inputs and creates a database from the command-line.
-
-## Table of Contents
-* General Info
-* Setup
-* Features
-* Demo Gif
-* Developer Notes
 
 ## General Info 
 
