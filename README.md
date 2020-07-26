@@ -32,9 +32,7 @@ Answers command-line prompts to enter company data, then view or manage that dat
 ## Demo Gif
 
 ### Status
-Project is:
-
- _In progress
+_In progress_
 
 ### Developer Notes
 
