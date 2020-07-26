@@ -25,7 +25,7 @@ To start the application run npm start
 ```
 npm start
 ```
-- Answer command-line prompts to enter company data, then view or manage that data.
+/ Answer command-line prompts to enter company data, then view or manage that data.
 
 ## Features
 
