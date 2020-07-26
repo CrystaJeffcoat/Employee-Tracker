@@ -7,6 +7,7 @@
 * [Setup](#Setup)
 * [Features](#Features)
 * [Demo Gif](#Demo-Gif)
+* [Status](#Status)
 * [Developer Notes](#Developer-Notes)
 
 ## Description 
@@ -29,6 +30,11 @@ Answers command-line prompts to enter company data, then view or manage that dat
 ## Features
 
 ## Demo Gif
+
+### Status
+Project is:
+
+ _In progress
 
 ### Developer Notes
 
