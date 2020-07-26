@@ -17,15 +17,15 @@ Using node, inquirer, and MySQL, this application takes user inputs and creates 
 
 
 ## Setup
-Do an npm install after cloning the repository
+Clone the repository, then install packages
 ```
 npm install
 ```
-Run npm start
+To start the application run npm start
 ```
 npm start
 ```
-> Answer command-line prompts to enter company data, then view or manage that data.
+>> Answer command-line prompts to enter company data, then view or manage that data.
 
 ## Features
 
