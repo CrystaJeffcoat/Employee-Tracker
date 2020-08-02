@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const orm = require("./config/orm.js");
+const connection = require("./config/connection.js");
 
 start();
 function start() {
@@ -34,3 +35,55 @@ function start() {
     };
   });
 };
+
+function addData() {
+  inquirer
+  .prompt({
+    name: "addData",
+    type: "list",
+    message: "What would you like to add?",
+    choices: [
+      "Department",
+      "Role",
+      "Employee",
+      "Exit"
+    ]
+  })
+  .then(function(answer) {
+    if (answer.addData == "Department") {
+      addDepartment();
+    } 
+    else if(answer.addData == "Role") {
+      addRole();
+    }
+    else if(answer.addData == "Employee") {
+      addEmployee();
+    }
+    else {
+      connection.end();
+    }
+  });
+};
+
+function addDepartment() {
+  inquirer
+  .prompt({
+    name: "dept",
+    type: "input",
+    message: "Enter department name: "
+  }).then(function(name) {
+    orm.addData("Department", {name: name.dept});
+  });
+}
+
+function viewData() {
+
+}
+
+function updateData() {
+
+}
+
+function deleteData() {
+
+}
