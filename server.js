@@ -2,6 +2,8 @@ const inquirer = require("inquirer");
 const orm = require("./config/orm.js");
 const connection = require("./config/connection.js");
 const add = require("./sources/add.js");
+const view = require("./sources/view.js");
+
 start();
 function start() {
   inquirer
@@ -66,7 +68,25 @@ function addData() {
 };
 
 function viewData() {
-
+  // view employees by department
+  // view all employees
+  // view employees by manager
+  inquirer.prompt({
+    name: "view",
+    type: "list",
+    message: "What would you like to view? ",
+    choices: [
+      "View all employees",
+      "View employees by department",
+      "View employees by manager",
+      "View total utilized budget by department"
+    ]
+  })
+  .then(function(answer){
+    if(answer.view == "View all employees") {
+      view.allEmployees();
+    }
+  })
 }
 
 function updateData() {
