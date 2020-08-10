@@ -1,8 +1,10 @@
 const inquirer = require("inquirer");
-const orm = require("./config/orm.js");
-const connection = require("./config/connection.js");
-const add = require("./sources/add.js");
-const view = require("./sources/view.js");
+const connection = require("./config/connection");
+const add = require("./sources/add");
+const view = require("./sources/view");
+const update = require("./sources/update");
+const remove = require("./sources/remove");
+const cTable = require('console.table');
 
 start();
 function start() {
@@ -62,8 +64,8 @@ function addData() {
       add.employee();
     }
     else {
-      connection.end();
-    }
+      start();
+    };
   });
 };
 
@@ -74,7 +76,7 @@ function viewData() {
   inquirer.prompt({
     name: "view",
     type: "list",
-    message: "What would you like to view? ",
+    message: "What would you like to view?",
     choices: [
       "View all employees",
       "View employees by department",
@@ -86,7 +88,9 @@ function viewData() {
   .then(function(answer){
     switch(answer.view) {
       case "View all employees":
-        view.allEmployees();
+        view.allEmployees(function(res) {
+          console.table(res);
+        });
         break;
       case "View employees by department":
         view.byDepartment();
@@ -98,15 +102,45 @@ function viewData() {
         view.budget();
         break;
       default: 
-        connection.end();
-    }
-  })
-}
+        start();
+    };
+  });
+};
 
 function updateData() {
-
-}
+  inquirer.prompt({
+    name: "update",
+    type: "list",
+    message: "What would you like to update",
+    choices: ["Employee role", "Employee manager", "Exit"]
+  })
+  .then(function(answer){
+    if (answer.update == "Employee role") {
+      update.role();
+    } else if (answer.update == "Employee manager") {
+      update.manager();
+    } else {
+      start();
+    };
+  });
+};
 
 function deleteData() {
-
-}
+  inquirer.prompt({
+    name: "delete",
+    type: "list", 
+    message: "What do you want to remove?",
+    choices: ["Departments, Employees, Roles"]
+  })
+  .then(function(answer) {
+    if (answer.delete == "Departments") {
+      remove.department();
+    } else if (answer.delete == "Employees") {
+      remove.employee();
+    } else if (answer.delete == "Roles") {
+      remove.role();
+    } else {
+      start();
+    };
+  });
+};
