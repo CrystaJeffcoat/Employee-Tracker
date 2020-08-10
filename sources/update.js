@@ -4,31 +4,50 @@ const empData = require("./view");
 
 employeeArr = [];
 employeeNames = [];
-
 empIdArr = [];
+roleArr = [];
+roleTitleArr = [];
 
 empData.allEmployees(function(res){
   res.forEach(item => employeeArr.push(item));
-  employeeArr.forEach(item => employeeNames.push(item.first_name + " " + item.last_name));
+  res.forEach(item => employeeNames.push(item.first_name + " " + item.last_name));
 });
 
 orm.getData("employee", function(res) {
   res.forEach(item => empIdArr.push(item));
-})
+});
 
+orm.getData("emp_role", function(res) {
+  res.forEach(item => roleArr.push(item));
+  res.forEach(item => roleTitleArr.push(item.title));
+});
 
 const update = {
   role: function() {
     
     inquirer
-    .prompt({
-      name: "employee",
-      type: "list",
-      message: "Which employee's role do you want to update?",
-      choices: managerArr
-    })
+    .prompt([
+      {
+        name: "employee",
+        type: "list",
+        message: "Which employee's role do you want to update?",
+        choices: employeeNames
+      },
+      {
+        name: "role",
+        type: "list",
+        message: "What is the new role for the selected employee?",
+        choices: roleTitleArr
+      }
+    ])
     .then(function(answer) {
-
+      // finds selected employee id
+      let empId = empIdArr.find(val => (val.first_name + " " + val.last_name) == answer.employee);
+      console.log(empId)
+      // finds id of selected role
+      let roleId = roleArr.find(val => (val.title) == answer.role);
+      console.log(roleId)
+      orm.updateData("employee", { role_id: roleId.id }, { id: empId.id })
     });
   },
   manager: function() {
