@@ -2,7 +2,7 @@ const cTable = require('console.table');
 const connection = require("../config/connection");
 
 const view = {
-  allEmployees: function() {
+  allEmployees: function(cb) {
     let queryString = 
     `SELECT e.first_name, e.last_name, title, salary, department, 
     concat(m.first_name," ", m.last_name) as manager 
@@ -12,7 +12,7 @@ const view = {
     left JOIN department ON emp_role.department_id = department.id`
     connection.query(queryString,function(err, result) {
       if (err) throw err;
-      console.table(result);
+      cb(result);
     });
   },
   byDepartment: function() {
