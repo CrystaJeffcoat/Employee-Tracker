@@ -79,12 +79,26 @@ function viewData() {
       "View all employees",
       "View employees by department",
       "View employees by manager",
-      "View total utilized budget by department"
+      "View total utilized budget by department",
+      "Exit"
     ]
   })
   .then(function(answer){
-    if(answer.view == "View all employees") {
-      view.allEmployees();
+    switch(answer.view) {
+      case "View all employees":
+        view.allEmployees();
+        break;
+      case "View employees by department":
+        view.byDepartment();
+        break;
+      case "View employees by manager":
+        view.byManager();
+        break;
+      case "View total utilized budget by department":
+        view.budget();
+        break;
+      default: 
+        connection.end();
     }
   })
 }
