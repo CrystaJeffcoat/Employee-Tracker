@@ -25,6 +25,16 @@ const orm = {
       if (err) throw err;
       console.log("Successfully updated data!");
     });
+  },
+  delete: function(tableName, val) {
+    let queryString = "DELETE FROM ?? WHERE ?"
+    connection.query(queryString, [tableName, val], function(err, result) {
+      if (err) {
+        console.log("Oops! This data cannot be deleted without addressing its associated data. \n" + err);
+        return;
+      }
+      console.log("Data deleted!");
+    });
   }
 }
 
