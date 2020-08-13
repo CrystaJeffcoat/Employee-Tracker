@@ -34,7 +34,7 @@ Answer command-line prompts to enter company data, then view or manage that data
 * View all department budgets.
 
 ## Demo Gif
-![https://github.com/CrystaJeffcoat/Employee-Tracker/blob/master/assets/demo.webm]
+[!(https://github.com/CrystaJeffcoat/Employee-Tracker/blob/master/assets/demo.webm)]
 
 ### Status
 _Good standing_
