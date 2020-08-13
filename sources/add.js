@@ -12,7 +12,7 @@ const add = {
       message: "Enter department name: "
     })
     .then(function(name) {
-      orm.addData("Department", {name: name.dept});
+      orm.addData("Department", {department: name.dept});
     });
   },
   role: function() {
