@@ -34,7 +34,7 @@ Answer command-line prompts to enter company data, then view or manage that data
 * View all department budgets.
 
 ## Demo Gif
-[![alt text](https://drive.google.com/file/d/1tUuqgAbrV2ir3M9dPiDQuEhhlh9tMTqz/view)]
+![alt text](https://drive.google.com/file/d/1tUuqgAbrV2ir3M9dPiDQuEhhlh9tMTqz/view)
 
 ### Status
 _Good standing_
