@@ -34,7 +34,7 @@ Answer command-line prompts to enter company data, then view or manage that data
 * View all department budgets.
 
 ## Demo Gif
-[!](/assets/demo.gif)
+![employee gif](assets/demo.gif)
 
 ### Status
 _Good standing_
