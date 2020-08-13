@@ -130,12 +130,10 @@ function deleteData() {
     name: "delete",
     type: "list", 
     message: "What do you want to remove?",
-    choices: ["Departments, Employees, Roles"]
+    choices: ["Employees", "Roles", "Exit"]
   })
   .then(function(answer) {
-    if (answer.delete == "Departments") {
-      remove.department();
-    } else if (answer.delete == "Employees") {
+    if (answer.delete == "Employees") {
       remove.employee();
     } else if (answer.delete == "Roles") {
       remove.role();
