@@ -17,9 +17,11 @@ const add = {
   },
   role: function() {
     let dept = [];
+    let deptArr = [];
   
     orm.getData("department", function(res){
       res.forEach(item => dept.push(item));
+      res.forEach(item => deptArr.push(item.department));
     });
   
     inquirer
@@ -44,11 +46,11 @@ const add = {
         name: "dept",
         type: "rawlist",
         message: "Choose department for this role: ",
-        choices: dept
+        choices: deptArr
       }
     ])
     .then((answer) => {
-      let deptId = dept.find(val => val.name == answer.dept);
+      let deptId = dept.find(val => val.department == answer.dept);
   
       orm.addData("emp_role",
         {
