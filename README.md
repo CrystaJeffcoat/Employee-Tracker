@@ -11,10 +11,11 @@
 * [Developer Notes](#Developer-Notes)
 
 ## Description 
-Using node, inquirer, and MySQL, this application takes user inputs and creates a database from the command-line.
+Using node, inquirer, and MySQL, this application takes user inputs and creates an interactive database from the command-line.
 
 ## General Info 
-
+Using the command-line, the user will be asked a series of questions in order to generate a database.  
+The user will be able to Create, View, Update, Delete data. 
 
 ## Setup
 Clone the repository, then install packages
@@ -29,11 +30,14 @@ npm start
 Answer command-line prompts to enter company data, then view or manage that data.
 
 ## Features
+* View company data by employee, manager, or department. 
+* View all department budgets.
 
 ## Demo Gif
 
 ### Status
-_In progress_
+_Good standing_
 
 ### Developer Notes
+- This application could use some further abstraction to some of the functions, but it does the job!
 
