@@ -33,7 +33,7 @@ Answer command-line prompts to enter company data, then view or manage that data
 * View company data by employee, manager, or department. 
 * View all department budgets.
 
-## Demo Gif
+## [Demo Gif](https://drive.google.com/file/d/1DTbWihkMHQ3jdLOgFwuWsx8Jj0PyaVlx/view)
 ![employee gif](assets/demo.gif)
 
 ### Status
